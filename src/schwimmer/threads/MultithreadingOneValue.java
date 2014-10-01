@@ -14,7 +14,7 @@ public class MultithreadingOneValue {
 			Thread thread = new Thread() {
 				public void run() {
 					try {
-						Thread.sleep(500);
+						Thread.sleep(10);
 					} catch (InterruptedException e) {
 					}
 					wrapper.i++;
