@@ -15,7 +15,7 @@ public class ChatClient extends ChatBox {
 	public ChatClient() throws UnknownHostException, IOException {
 		super("Chat Client");
 
-		socket = new Socket("192.168.117.107",9097);
+		socket = new Socket("192.168.117.107",3773);
 		setSocket(socket);
 		
 		new ReadThread(this, socket).start();

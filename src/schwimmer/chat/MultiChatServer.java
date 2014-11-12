@@ -12,7 +12,7 @@ public class MultiChatServer {
 
 	public static void main( String args[] ) throws IOException {
 		
-		ServerSocket serverSocket = new ServerSocket(9097);
+		ServerSocket serverSocket = new ServerSocket(3773);
 		List<Socket> sockets = new ArrayList<Socket>();
 		BlockingQueue<String> messages = new LinkedBlockingQueue<String>();
 		MessageSender sender = new MessageSender(sockets, messages);

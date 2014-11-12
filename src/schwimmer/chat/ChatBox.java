@@ -11,6 +11,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -37,7 +38,7 @@ public class ChatBox extends JFrame implements ActionListener {
 		panel.add(button);
 		
 		setLayout(new BorderLayout());
-		add(area, BorderLayout.CENTER);
+		add(new JScrollPane(area), BorderLayout.CENTER);
 		add(panel, BorderLayout.SOUTH);
 		
 		button.addActionListener(this);
@@ -70,20 +71,15 @@ public class ChatBox extends JFrame implements ActionListener {
 		out.println(s);
 		out.flush();
 	}
-	
-	public void sendAndAppend() {
-		String s = getField().getText();
-		append(s);
-		try {
-			send(s);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		sendAndAppend();
+		try {
+			send(getField().getText());
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 	
 }
