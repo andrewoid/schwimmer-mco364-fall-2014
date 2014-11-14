@@ -8,6 +8,7 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 
+// http://www.eclipse.org/jetty/documentation/current/jetty-websocket-api-annotations.html
 @WebSocket(maxTextMessageSize = 64 * 1024)
 public class EchoWebSocket {
 	
