@@ -10,7 +10,7 @@ import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 
 // http://www.eclipse.org/jetty/documentation/current/jetty-websocket-api-annotations.html
 @WebSocket(maxTextMessageSize = 64 * 1024)
-public class EchoWebSocket {
+public class EchoServerWebSocket {
 	
 	private Session session;
 	
