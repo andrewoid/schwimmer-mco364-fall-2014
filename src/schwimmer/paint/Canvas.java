@@ -1,7 +1,7 @@
 package schwimmer.paint;
 
-import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JComponent;
@@ -10,9 +10,8 @@ public class Canvas extends JComponent {
 
 	private static final long serialVersionUID = 1L;
 
-	int x;
-	int y;
-	BufferedImage image;
+	private BufferedImage image;
+	private DrawListener listener;
 
 	public Canvas() {
 		image = new BufferedImage(800, 600, BufferedImage.TYPE_INT_ARGB);
@@ -23,15 +22,13 @@ public class Canvas extends JComponent {
 		super.paintComponent(g);
 
 		g.drawImage(image, 0, 0, null);
-
+		
+		listener.drawPreview((Graphics2D)g);
+		
 	}
 
-	public void setPoint(int x, int y) {
-		this.x = x;
-		this.y = y;
-		Graphics g = image.getGraphics();
-		g.setColor(Color.BLACK);
-		g.fillOval(x, y, 10, 10);
+	public BufferedImage getImage() {
+		return image;
 	}
 
 }

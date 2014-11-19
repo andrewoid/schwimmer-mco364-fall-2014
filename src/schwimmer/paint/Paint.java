@@ -18,8 +18,9 @@ public class Paint extends JFrame {
 		Canvas canvas = new Canvas();
 		add(canvas, BorderLayout.CENTER);
 		
-		DrawListener listener = new DrawListener(canvas);
-		
+		PencilListener listener = new PencilListener(canvas);
+
+		canvas.addMouseListener(listener);
 		canvas.addMouseMotionListener(listener);
 		
 	}
