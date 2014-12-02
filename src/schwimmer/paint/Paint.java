@@ -15,13 +15,16 @@ public class Paint extends JFrame {
 		setTitle("Paint");
 		setLocationRelativeTo(null);
 		
+		Options options = new Options();
 		Canvas canvas = new Canvas();
 		add(canvas, BorderLayout.CENTER);
 		
-		PencilListener listener = new PencilListener(canvas);
+		//DrawListener listener = new PencilListener(canvas);
+		DrawListener listener = new RectListener(canvas, options);
 
 		canvas.addMouseListener(listener);
 		canvas.addMouseMotionListener(listener);
+		canvas.setDrawListener(listener);
 		
 	}
 

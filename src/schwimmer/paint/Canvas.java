@@ -31,6 +31,10 @@ public class Canvas extends JComponent {
 		return image;
 	}
 
+	public void setDrawListener(DrawListener listener) {
+		this.listener = listener;
+	}
+
 }
 
 

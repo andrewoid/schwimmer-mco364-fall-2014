@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-public class PencilListener implements MouseListener, MouseMotionListener {
+public class PencilListener implements DrawListener {
 
 	private Canvas canvas;
 	private int previousX;
@@ -60,6 +60,11 @@ public class PencilListener implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseReleased(MouseEvent event) {
+		
+	}
+
+	@Override
+	public void drawPreview(Graphics2D g) {
 		
 	}
 
