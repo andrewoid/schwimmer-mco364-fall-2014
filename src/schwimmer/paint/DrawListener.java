@@ -8,7 +8,10 @@ public interface DrawListener
 	extends MouseListener, MouseMotionListener {
 
 	/**
-	 * 
+	 * This method is meant to be called by the Canvas class.
+	 * If the DrawListener has any kind of preview before mouseReleased() then
+	 * it should be drawn here.
+	 * The Graphics2D object should be from paintComponent()
 	 */
 	void drawPreview(Graphics2D g);
 	
