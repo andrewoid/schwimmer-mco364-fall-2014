@@ -7,8 +7,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import schwimmer.multichat.ReadThread;
-
 public class ChatServer extends ChatBox implements ActionListener {
 
 	private ServerSocket server;

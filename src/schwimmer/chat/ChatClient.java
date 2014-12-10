@@ -8,8 +8,6 @@ import java.net.UnknownHostException;
 
 import javax.swing.JTextArea;
 
-import schwimmer.multichat.ReadThread;
-
 public class ChatClient extends ChatBox {
 
 	private Socket socket;

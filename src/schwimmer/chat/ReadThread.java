@@ -1,4 +1,4 @@
-package schwimmer.multichat;
+package schwimmer.chat;
 
 import java.awt.TextArea;
 import java.io.BufferedReader;
@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
-import schwimmer.chat.ChatBox;
 
 public class ReadThread extends Thread {
 	

@@ -8,13 +8,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
-public class MessageSender extends Thread {
+public class MessageSenderThread extends Thread {
 
 	private List<Socket> sockets;
 	private BlockingQueue<String> messages;
 	private SocketEventListener listener;
 
-	public MessageSender(
+	public MessageSenderThread(
 			List<Socket> sockets, 
 			BlockingQueue<String> messages,
 			SocketEventListener listener) {
@@ -43,7 +43,6 @@ public class MessageSender extends Thread {
 						iter.remove();
 						listener.onDisconnect(socket);
 					}
-	
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();

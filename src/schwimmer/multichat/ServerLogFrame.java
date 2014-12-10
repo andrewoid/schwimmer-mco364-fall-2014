@@ -16,12 +16,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class ServerChatBox extends JFrame implements SocketEventListener {
+public class ServerLogFrame extends JFrame implements SocketEventListener {
 
 	private static final long serialVersionUID = 1L;
 	private JTextArea area;
 
-	public ServerChatBox(String title) {
+	public ServerLogFrame(String title) {
 		
 		setSize(800,600);
 		setTitle(title);
@@ -55,19 +55,20 @@ public class ServerChatBox extends JFrame implements SocketEventListener {
 
 	@Override
 	public void onMessage(Socket socket, String message) {
-		append(message);
-	}
-	
-	public static void main( String args[] ) throws IOException {
-		ServerChatBox box = new ServerChatBox("Server");
-		box.setVisible(true);
-		MultiChatServer server = new MultiChatServer(3773, box);
-		server.run();
+		append(socket.getInetAddress().toString() + " " + message);
 	}
 
 	@Override
 	public void onServerStart(ServerSocket serverSocket) {
 		append("SERVER START " + serverSocket.getLocalPort());
 	}
+	
+	public static void main( String args[] ) throws IOException {
+		ServerLogFrame frame = new ServerLogFrame("Server");
+		frame.setVisible(true);
+		MultiChatServer server = new MultiChatServer(3773, frame);
+		server.run();
+	}
+
 	
 }
