@@ -4,6 +4,8 @@ public class MultithreadingOneValue {
 
 	static class IntegerWrapper {
 		int i;
+		
+		
 	}
 	
 	public static void main( String args[] ) {
